@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import './../styles/Avatar.css'
+import '../css/Avatar.css'
 
 function Avatar({ name = '' }) {
   return <div className="avatar">{name.charAt(0)}</div>
