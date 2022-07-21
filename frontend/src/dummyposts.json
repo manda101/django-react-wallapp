@@ -1,0 +1,20 @@
+[
+    {
+      "id": "1",
+      "name": "Anonymous",
+      "body": "This is a cool post",
+      "created_at": "2022-07-20T10:32:20.683059Z"
+    },
+    {
+      "id": "2",
+      "name": "User1",
+      "body": "This is another really cool post",
+      "created_at": "2022-07-20T11:28:20.683059Z"
+    },
+    {
+      "id": "3",
+      "name": "Anonymous",
+      "body": "Some anon posting on the wall",
+      "created_at": "2022-07-20T12:11:20.683059Z"
+    }
+]

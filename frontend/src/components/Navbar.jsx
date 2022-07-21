@@ -12,14 +12,12 @@ const Navbar = () => {
           {user ? (
             <>
               <Link to="/">Home</Link>
-              <Link to="/wall">Wall</Link>
               <button onClick={logoutUser}>Logout</button>
             </>
           ) : (
             <>
               <Link to="/login">Login</Link>
               <Link to="/register">Register</Link>
-              <Link to="/wall">Wall</Link>
             </>
           )}
         </div>
