@@ -7,11 +7,13 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 5px;
+    display: flex;
+    width: auto;
   }
   
   .post-user {
     font-weight: bold;
-    color: rgb(169, 78, 255);
+    color: rgb(136, 96, 211);
     padding-right: 5px;
   }
   
@@ -24,4 +26,5 @@
   .post-content {
     padding-left: 25px;
     padding-bottom: 20px;
+    display: flex;
   }

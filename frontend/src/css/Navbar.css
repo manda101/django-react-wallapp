@@ -1,0 +1,40 @@
+.navbar {
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgb(100, 64, 134);
+    border-bottom: 5px solid rgb(22, 22, 22);
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.app-header {
+    display: flex;
+    font-weight: bold;
+    color: white;
+    font-family: sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.nav-button {
+    flex: 0 0 auto;
+    padding: 5px 18px;
+    width: auto;
+    line-height: 15px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(68, 33, 107);
+    border-radius: 5px;
+    border-color: rgba(41, 28, 65, 0.781);
+    margin: 5px;
+    font-size: 0.9em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.nav-button:hover {
+    box-shadow: 0 6px 8px 0 rgba(0,0,0,0.24), 0 9px 25px 0 rgba(0,0,0,0.19);
+}

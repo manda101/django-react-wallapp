@@ -1,5 +1,7 @@
 import { useContext } from "react";
 import AuthContext from "../context/AuthContext";
+import { Link } from "react-router-dom";
+import '../css/Login.css'
 
 const LoginPage = () => {
   const { loginUser } = useContext(AuthContext);
@@ -12,14 +14,17 @@ const LoginPage = () => {
 
   return (
     <section>
-      <form onSubmit={handleSubmit}>
-        <h1>Login </h1>
+      <form className='login-form' onSubmit={handleSubmit}>
         <hr />
-        <label htmlFor="username">Username</label>
-        <input type="text" id="username" placeholder="Enter Username" />
-        <label htmlFor="password">Password</label>
-        <input type="password" id="password" placeholder="Enter Password" />
-        <button type="submit">Login</button>
+        <label className='login-label' htmlFor="username">Username</label>
+        <input className='login-input' type="text" id="username" placeholder="Enter Username" />
+        <label className='login-label' htmlFor="password">Password</label>
+        <input className='login-input' type="password" id="password" placeholder="Enter Password" />
+        <button className='login-button' type="submit">Submit</button>
+        <Link to="/" >
+        <button className='login-button'>Cancel</button>
+        </Link>
+        
       </form>
     </section>
   );

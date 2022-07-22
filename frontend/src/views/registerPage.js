@@ -1,11 +1,14 @@
 import { useState, useContext } from "react";
 import AuthContext from "../context/AuthContext";
+import { useNavigate } from "react-router-dom";
+import '../css/Register.css'
 
 function Register() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [password2, setPassword2] = useState("");
   const { registerUser } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleSubmit = async e => {
     e.preventDefault();
@@ -15,7 +18,6 @@ function Register() {
   return (
     <section>
       <form onSubmit={handleSubmit}>
-        <h1>Register</h1>
         <hr />
         <div>
           <label htmlFor="username">Username</label>
@@ -50,6 +52,7 @@ function Register() {
         </div>
         <div>
           <button>Register</button>
+          <button onClick={() => navigate(-1)}>Cancel</button>
         </div>
       </form>
     </section>
