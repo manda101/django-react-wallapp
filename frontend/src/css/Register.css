@@ -1,0 +1,38 @@
+.register-form {
+    width: 50%;
+}
+
+.register-label {
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+.register-input {
+    width: 100%;
+    padding: 10px 10px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}   
+
+
+.register-button {
+    flex: 0 0 auto;
+    padding: 5px 18px;
+    width: auto;
+    line-height: 10px;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border-radius: 5px;
+    border-color: rgba(34, 98, 109, 0.781);
+    margin: 5px;
+    font-size: 0.9em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.register-button:hover {
+    box-shadow: 0 6px 8px 0 rgba(0,0,0,0.24), 0 9px 25px 0 rgba(0,0,0,0.19);
+}

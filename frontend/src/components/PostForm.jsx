@@ -1,5 +1,4 @@
 import axios from 'axios'
-// import PropTypes from 'prop-types'
 // import { useState } from 'react'
 import Avatar from './Avatar'
 import '../css/PostForm.css'
@@ -34,25 +33,12 @@ export default class PostForm extends React.Component {
       })
   }
 
-
-  // const [editorValue, setEditorValue] = useState(state)
-
-  // const handleEditorValueChange = (e) => {
-  //   setEditorValue(e.target.value)
-  // }
-
-  // const handleSubmit = (e) => {
-  //   e.preventDefault()
-  //   onSubmit(editorValue)
-  //   setEditorValue('')
-  // }
   render() {
     return (
       <form className="post-form" onSubmit={this.handleSubmit}>
         <div className="post-form-container">
           <Avatar />
           <textarea
-            // value={editorValue}
             onChange={this.handleChange}
             className="post-form-textarea"
             placeholder="Post a message on the wall..."
@@ -63,9 +49,3 @@ export default class PostForm extends React.Component {
     )
   }
 }
-
-// PostForm.propTypes = {
-//   onSubmit: PropTypes.func.isRequired,
-// }
-
-// export default PostForm

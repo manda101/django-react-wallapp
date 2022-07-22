@@ -11,7 +11,6 @@ from rest_framework.decorators import api_view, permission_classes
 from .serializer import PostSerializer
 from .models import Post
 
-# Create your views here.
 
 class MyTokenObtainPairView(TokenObtainPairView):
     serializer_class = MyTokenObtainPairSerializer
@@ -25,6 +24,7 @@ class PostList(generics.ListAPIView):
     queryset = Post.objects.order_by('-created_at').all()
     serializer_class = PostSerializer
 
+@permission_classes([IsAuthenticated])
 class PostAdd(generics.CreateAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
@@ -39,7 +39,8 @@ def getRoutes(request):
         '/api/token/',
         '/api/register/',
         '/api/token/refresh/',
-        '/api/add/'
+        '/api/add/',
+        '/api/test/'
     ]
     return Response(routes)
 
@@ -47,10 +48,10 @@ def getRoutes(request):
 @permission_classes([IsAuthenticated])
 def testEndPoint(request):
     if request.method == 'GET':
-        data = f"Congratulation {request.user}, your API just responded to GET request"
+        data = f'{request.user} your API just responded to GET request'
         return Response({'response': data}, status=status.HTTP_200_OK)
     elif request.method == 'POST':
         text = request.POST.get('text')
-        data = f'Congratulation your API just responded to POST request with text: {text}'
+        data = f'{request.user} your API just responded to POST request with text: {text}'
         return Response({'response': data}, status=status.HTTP_200_OK)
     return Response({}, status.HTTP_400_BAD_REQUEST)

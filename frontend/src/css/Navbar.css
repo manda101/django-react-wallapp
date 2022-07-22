@@ -3,7 +3,7 @@
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: rgb(100, 64, 134);
+    background-color: rgb(0, 151, 156);
     border-bottom: 5px solid rgb(22, 22, 22);
     padding-left: 50px;
     padding-right: 50px;
@@ -26,9 +26,9 @@ a {
     width: auto;
     line-height: 15px;
     background-color: rgb(255, 255, 255);
-    color: rgb(68, 33, 107);
+    color: rgb(16, 88, 94);
     border-radius: 5px;
-    border-color: rgba(41, 28, 65, 0.781);
+    border-color: rgb(13, 86, 90);
     margin: 5px;
     font-size: 0.9em;
     font-weight: bold;

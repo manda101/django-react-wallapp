@@ -1,27 +1,27 @@
 import { useState, useContext } from "react";
 import AuthContext from "../context/AuthContext";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import '../css/Register.css'
 
 function Register() {
   const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [password2, setPassword2] = useState("");
+  const [confirm_password, setConfirm_password] = useState("");
   const { registerUser } = useContext(AuthContext);
-  const navigate = useNavigate();
 
   const handleSubmit = async e => {
     e.preventDefault();
-    registerUser(username, password, password2);
+    registerUser(username, email, password, confirm_password);
   };
 
   return (
     <section>
-      <form onSubmit={handleSubmit}>
+      <form className='register-form' onSubmit={handleSubmit}>
         <hr />
         <div>
-          <label htmlFor="username">Username</label>
-          <input
+          <label className='register-label' htmlFor="username">Username</label>
+          <input className='register-input'
             type="text"
             id="username"
             onChange={e => setUsername(e.target.value)}
@@ -30,8 +30,18 @@ function Register() {
           />
         </div>
         <div>
-          <label htmlFor="password">Password</label>
-          <input
+          <label className='register-label' htmlFor="email">Email</label>
+          <input className='register-input'
+            type="email"
+            id="email"
+            onChange={e => setEmail(e.target.value)}
+            placeholder="Email"
+            required
+          />
+        </div>
+        <div>
+          <label className='register-label' htmlFor="password">Password</label>
+          <input className='register-input'
             type="password"
             id="password"
             onChange={e => setPassword(e.target.value)}
@@ -40,19 +50,21 @@ function Register() {
           />
         </div>
         <div>
-          <label htmlFor="confirm-password">Confirm Password</label>
-          <input
+          <label className='register-label' htmlFor="confirm_password">Confirm Password</label>
+          <input className='register-input'
             type="password"
-            id="confirm-password"
-            onChange={e => setPassword2(e.target.value)}
+            id="confirm_password"
+            onChange={e => setConfirm_password(e.target.value)}
             placeholder="Confirm Password"
             required
           />
-          <p>{password2 !== password ? "Passwords do not match" : ""}</p>
+          <p>{confirm_password !== password ? "Passwords do not match" : ""}</p>
         </div>
         <div>
-          <button>Register</button>
-          <button onClick={() => navigate(-1)}>Cancel</button>
+          <button className='register-button'>Submit</button>
+          <Link to="/" >
+            <button className='register-button'>Cancel</button>
+          </Link>
         </div>
       </form>
     </section>

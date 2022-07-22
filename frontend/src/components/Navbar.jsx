@@ -4,6 +4,7 @@ import AuthContext from "../context/AuthContext";
 import Home from "../views/homePage";
 import Login from "../views/loginPage";
 import Register from "../views/registerPage";
+import ProtectedPage from "../views/ProtectedPage";
 import '../css/Navbar.css'
 
 const Navbar = () => {
@@ -12,7 +13,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div>
         <h1 className="app-header">Wall App</h1>
-        <p>Login, register, or post anonymously!</p>
+        <p>Register and/or log in to post on the wall </p>
         <div>
           {user ? (
             <>
@@ -20,14 +21,14 @@ const Navbar = () => {
             </>
           ) : (
             <>
+            <Link to="/register">
+                <button className="nav-button">
+                  Register
+                </button>
+              </Link>
               <Link to="/login" >
                 <button className="nav-button">
                   Login
-                </button>
-              </Link>
-              <Link to="/register">
-                <button className="nav-button">
-                  Register
                 </button>
               </Link>
             </>
@@ -39,6 +40,7 @@ const Navbar = () => {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/post" element={<ProtectedPage />} />
         </Routes>
       </div>
     </nav>
