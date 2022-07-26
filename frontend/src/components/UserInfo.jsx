@@ -1,3 +1,4 @@
+// UserInfo
 function UserInfo({ user }) {
     return (
         <div>

@@ -1,3 +1,4 @@
+// individual Post
 import moment from 'moment'
 import PropTypes from 'prop-types'
 import Avatar from './Avatar'
@@ -7,15 +8,15 @@ function Post(props){
     const { name, children, createdAt } = props
 
     return (
-        <div className="post">
-            <Avatar name={name} />
-            <div className="post-header">
-                <span className="post-user">{name}</span>
-                <span className="post-created-at">
+        <div className='post'>
+            <Avatar name={name} className='post-avatar' />
+            <div className='post-header'>
+                <span className='post-user'>{name}</span>
+                <span className='post-created-at'>
                     {moment(createdAt).fromNow()} 
                 </span>
             </div>
-            <div className="post-content">{children}</div>
+            <div className='post-content'>{children}</div>
         </div>
     )
 }

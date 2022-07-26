@@ -1,3 +1,4 @@
+// AuthContext
 import { createContext, useState, useEffect } from "react";
 import jwt_decode from "jwt-decode";
 import { useNavigate } from "react-router-dom";
@@ -40,7 +41,7 @@ export const AuthProvider = ({ children }) => {
       localStorage.setItem("authTokens", JSON.stringify(data));
       navigate("/");
     } else {
-      alert("Something went wrong!");
+      alert("User login failed!");
     }
   };
 
@@ -60,7 +61,7 @@ export const AuthProvider = ({ children }) => {
     if (response.status === 201) {
       navigate("/login");
     } else {
-      alert("Something went wrong!");
+      alert("Register user failed!");
     }
   };
 
@@ -78,7 +79,8 @@ export const AuthProvider = ({ children }) => {
     setAuthTokens,
     registerUser,
     loginUser,
-    logoutUser
+    logoutUser,
+    // addPost
   };
 
   useEffect(() => {

@@ -1,9 +1,19 @@
-.post {
-    display: flex;
+/* individual post css */
+.post {  
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;    
     padding: 10px;
   }
   
+  .post-avatar {
+    grid-area: 1 / 1 / 2 / 2;
+  }
+
   .post-header {
+    grid-area: 1 / 2 / 2 / 8;
     display: flex;
     justify-content: space-between;
     margin-bottom: 5px;
@@ -24,6 +34,7 @@
   }
   
   .post-content {
+    grid-area: 2 / 2 / 2 / 8;
     padding-left: 25px;
     padding-bottom: 20px;
     display: flex;
