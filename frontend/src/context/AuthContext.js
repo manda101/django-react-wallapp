@@ -1,21 +1,22 @@
 // AuthContext
-import { createContext, useState, useEffect } from "react";
-import jwt_decode from "jwt-decode";
-import { useNavigate } from "react-router-dom";
+import { createContext, useState, useEffect } from 'react';
+import jwt_decode from 'jwt-decode';
+import { useNavigate } from 'react-router-dom';
 
 const AuthContext = createContext();
 
 export default AuthContext;
 
+// get JWT and user from local storage
 export const AuthProvider = ({ children }) => {
   const [authTokens, setAuthTokens] = useState(() =>
-    localStorage.getItem("authTokens")
-      ? JSON.parse(localStorage.getItem("authTokens"))
+    localStorage.getItem('authTokens')
+      ? JSON.parse(localStorage.getItem('authTokens'))
       : null
   );
   const [user, setUser] = useState(() =>
-    localStorage.getItem("authTokens")
-      ? jwt_decode(localStorage.getItem("authTokens"))
+    localStorage.getItem('authTokens')
+      ? jwt_decode(localStorage.getItem('authTokens'))
       : null
   );
   const [loading, setLoading] = useState(true);
@@ -23,10 +24,10 @@ export const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
 
   const loginUser = async (username, password) => {
-    const response = await fetch("http://127.0.0.1:8000/api/token/", {
-      method: "POST",
+    const response = await fetch('http://127.0.0.1:8000/api/token/', {
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json"
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify({
         username,
@@ -38,18 +39,18 @@ export const AuthProvider = ({ children }) => {
     if (response.status === 200) {
       setAuthTokens(data);
       setUser(jwt_decode(data.access));
-      localStorage.setItem("authTokens", JSON.stringify(data));
-      navigate("/");
+      localStorage.setItem('authTokens', JSON.stringify(data));
+      navigate('/');
     } else {
-      alert("User login failed!");
+      alert('User login failed!');
     }
   };
 
   const registerUser = async (username, email, password, confirm_password) => {
-    const response = await fetch("http://127.0.0.1:8000/api/register/", {
-      method: "POST",
+    const response = await fetch('http://127.0.0.1:8000/api/register/', {
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json"
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify({
         username,
@@ -59,17 +60,17 @@ export const AuthProvider = ({ children }) => {
       })
     });
     if (response.status === 201) {
-      navigate("/login");
+      navigate('/login');
     } else {
-      alert("Register user failed!");
+      alert('Register user failed!');
     }
   };
 
   const logoutUser = () => {
     setAuthTokens(null);
     setUser(null);
-    localStorage.removeItem("authTokens");
-    navigate("/");
+    localStorage.removeItem('authTokens');
+    navigate('/');
   };
 
   const contextData = {
@@ -79,8 +80,7 @@ export const AuthProvider = ({ children }) => {
     setAuthTokens,
     registerUser,
     loginUser,
-    logoutUser,
-    // addPost
+    logoutUser
   };
 
   useEffect(() => {

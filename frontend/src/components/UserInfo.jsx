@@ -1,4 +1,4 @@
-// UserInfo
+// UserInfo to display on home page upon login
 function UserInfo({ user }) {
     return (
         <div>

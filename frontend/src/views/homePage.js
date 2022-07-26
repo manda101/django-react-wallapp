@@ -1,6 +1,7 @@
-import { useContext } from "react";
-import UserInfo from "../components/UserInfo";
-import AuthContext from "../context/AuthContext";
+// HomePage
+import { useContext } from 'react';
+import UserInfo from '../components/UserInfo';
+import AuthContext from '../context/AuthContext';
 
 const Home = () => {
   const { user } = useContext(AuthContext);
