@@ -27,7 +27,6 @@ Make sure yarn and python are installed.
    cd django-react-wallapp-clone
    ```
 2. Activate python virtual environment
-   - Windows:
    ```sh
    venv\Scripts\activate
    ```
@@ -51,4 +50,7 @@ Make sure yarn and python are installed.
    ```sh
    python manage.py runserver
    ```
-7. Run 
+7. Run React App
+   ```sh
+   yarn start
+   ```
